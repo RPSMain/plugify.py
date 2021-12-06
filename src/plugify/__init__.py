@@ -2,6 +2,7 @@
 plugify.py
 ~~~~~~~~~~
 Pythonic API Wrapper For https://plugify.cf
+
 :copyright: 2021 RPS
 :license: Apache-2.0
 """
@@ -17,8 +18,16 @@ __path__ = __import__("pkgutil").extend_path(__path__, __name__)
 import logging
 from typing import NamedTuple, Literal
 
-# TODO(API): Gateway & HTTP
-# TODO:(User): Make
+# Official API
+from .http import *
+from .client import *
+from .dispatch import *
+from .group import *
+from .members import *
+from .gateway import *
+
+# User API
+# from .user_api import *
 
 class VersionInfo(NamedTuple):
     major: int
@@ -29,7 +38,7 @@ class VersionInfo(NamedTuple):
 
 
 version_info: VersionInfo = VersionInfo(
-    major=0, minor=2, micro=0, releaselevel="candidate", serial=0
+    major=0, minor=0, micro=1, releaselevel="candidate", serial=0
 )
 
 logging.getLogger(__name__).addHandler(logging.NullHandler())
