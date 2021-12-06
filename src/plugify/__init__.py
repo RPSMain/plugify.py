@@ -27,7 +27,10 @@ from .members import *
 from .gateway import *
 
 # User API
-# from .user_api import *
+"""
+from .user_api import *
+from .login import *
+"""
 
 class VersionInfo(NamedTuple):
     major: int
