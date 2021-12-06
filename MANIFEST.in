@@ -1,2 +1,2 @@
 include requirements.txt
-include src/*
+include src/plugify/py.typed
