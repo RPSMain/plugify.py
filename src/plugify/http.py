@@ -23,7 +23,7 @@ from urllib.parse import quote as uriquote
 version = "1"
 
 class Route:
-    BASE = f"https://plugify.cf/api/v{version}"
+    BASE = f"https://plugify.cf/api/v{version}" # Also Could be f"https://api.plugify.cf/v{version}"
 
     def __init__(self, method, route, **parameters: Any):
         self.method = method
