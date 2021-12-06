@@ -3,6 +3,10 @@ plugify.py
 
 Pythonic API Wrapper For Plugify
 
+Warning
++++++++
+This Doesn't actually work Yet
+
 Installing
 ==========
 
