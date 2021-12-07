@@ -34,10 +34,6 @@ extra_requires = {
         "Brotlipy",
         "cchardet",
     ],
-    "docs": [
-        "furo>=2021.11.23",
-        "sphinx==4.3.1",
-    ]
 }
 
 setup(
