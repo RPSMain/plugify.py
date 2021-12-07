@@ -39,8 +39,7 @@ from typing import (
 
 import aiohttp
 
+Coro = TypeVar('Coro', bound=Callable[..., Coroutine[Any, Any, Any]])
+
 class Client:
     pass
-
-
-Coro = TypeVar('Coro', bound=Callable[..., Coroutine[Any, Any, Any]])
