@@ -18,7 +18,7 @@ limitations under the License.
 from enum import Enum
 
 class APIErrors(Enum):
-
+    """Class Defines Error Enums: https://docs.plugify.cf/http/#apierror"""
     UNKNOWN                         = 0
     MISSING_TOKEN                   = 1
     INCORRECT_TOKEN                 = 2

@@ -22,7 +22,7 @@ from typing import Any, Optional, Type, TracebackType, TYPE_CHECKING, TypeVar, C
 from urllib.parse import quote as uriquote
 
 if TYPE_CHECKING:
-    from .types.snowflake import Snowflake, SnowflakeList
+    from .types.snowflake import Snowflake, SnowflakeList # Hopefully snowflakes are implemented before public release
     from types import TracebackType
 
     T = TypeVar('T')
@@ -85,4 +85,8 @@ class MaybeUnlock:
 
 class HTTPClient:
     """HTTPClient for connecting to Plugify"""
+    pass
+
+class RatelimitClient:
+    """Handles Ratelimiting To Prevent 429s"""
     pass
