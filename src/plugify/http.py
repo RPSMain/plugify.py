@@ -20,7 +20,6 @@ import aiohttp
 import json
 from typing import Any, Optional, Type, TracebackType, TYPE_CHECKING, TypeVar, Coroutine, Union, Dict
 from urllib.parse import quote as uriquote
-from .utils import _from_json
 
 if TYPE_CHECKING:
     from .types.snowflake import Snowflake, SnowflakeList
