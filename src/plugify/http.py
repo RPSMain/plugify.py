@@ -26,10 +26,11 @@ if TYPE_CHECKING:
     from .types.snowflake import Snowflake, SnowflakeList # Hopefully snowflakes are implemented before public release
     from types import TracebackType
 
-    T = TypeVar('T')
-    BE = TypeVar('BE', bound=BaseException)
-    MU = TypeVar('MU', bound='MaybeUnlock')
-    Response = Coroutine[Any, Any, T]
+    
+T = TypeVar('T')
+BE = TypeVar('BE', bound=BaseException)
+MU = TypeVar('MU', bound='MaybeUnlock')
+Response = Coroutine[Any, Any, T]
 
 version = "2"
 
