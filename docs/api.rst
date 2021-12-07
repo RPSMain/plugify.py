@@ -6,14 +6,14 @@ API Reference
 HTTP
 ----
 
-.. autoclass:: plugify.http.HTTPClient
+.. autoclass:: http.HTTPClient
     :members:
 
-.. autoclass:: plugify.http.RatelimitClient
+.. autoclass:: http.RatelimitClient
     :members:
 
 Enums
 -----
 
-.. autoclass:: plugify.enums.APIErrors
+.. autoclass:: enums.APIErrors
     :members:
