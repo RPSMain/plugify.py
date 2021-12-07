@@ -21,9 +21,10 @@ from typing import NamedTuple, Literal
 from .http import *
 from .client import *
 from .dispatch import *
-from .group import *
+from .groups import *
 from .members import *
 from .gateway import *
+from .enums import *
 
 class VersionInfo(NamedTuple):
     major: int

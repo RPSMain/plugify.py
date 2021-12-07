@@ -66,7 +66,7 @@ html_theme_options = {
         'color-brand-content': '#FFE871',
         'color-admonition-background': 'yellow',
     },
-    "sidebar_hide_name": True,
+    "sidebar_hide_name": False, # True When We Get Our Logo
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
