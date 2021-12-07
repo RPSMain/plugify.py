@@ -18,19 +18,12 @@ __path__ = __import__("pkgutil").extend_path(__path__, __name__)
 import logging
 from typing import NamedTuple, Literal
 
-# Official API
 from .http import *
 from .client import *
 from .dispatch import *
 from .group import *
 from .members import *
 from .gateway import *
-
-# User API
-"""
-from .user_api import *
-from .login import *
-"""
 
 class VersionInfo(NamedTuple):
     major: int
