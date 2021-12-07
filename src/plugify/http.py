@@ -18,8 +18,9 @@ limitations under the License.
 import asyncio
 import aiohttp
 import json
-from typing import Any, Optional, Type, TracebackType, TYPE_CHECKING, TypeVar, Coroutine, Union, Dict
+from typing import Any, Optional, Type, TYPE_CHECKING, TypeVar, Coroutine, Union, Dict
 from urllib.parse import quote as uriquote
+from types import TracebackType
 
 if TYPE_CHECKING:
     from .types.snowflake import Snowflake, SnowflakeList # Hopefully snowflakes are implemented before public release
