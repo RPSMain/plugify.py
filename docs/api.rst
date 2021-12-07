@@ -6,14 +6,14 @@ API Reference
 HTTP
 ----
 
-.. autoclass:: http.HTTPClient
+.. autoclass:: HTTPClient
     :members:
 
-.. autoclass:: http.RatelimitClient
+.. autoclass:: RatelimitClient
     :members:
 
 Enums
 -----
 
-.. autoclass:: enums.APIErrors
+.. autoclass:: APIErrors
     :members:
