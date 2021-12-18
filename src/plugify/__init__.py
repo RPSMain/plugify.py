@@ -24,7 +24,7 @@ from .enums import *
 from .gateway import *
 from .group import *
 from .http import *
-from .member import *
+from .user import *
 
 
 class VersionInfo(NamedTuple):
