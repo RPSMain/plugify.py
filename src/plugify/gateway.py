@@ -16,5 +16,6 @@ See the LICENSE file for the specific language governing permissions and
 limitations under the License.
 """
 import asyncio
-import aiohttp
 from typing import Any
+
+import aiohttp

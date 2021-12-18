@@ -17,29 +17,10 @@ limitations under the License.
 """
 from __future__ import annotations
 
-import asyncio
-import logging
-import signal
-import sys
-import traceback
-from typing import (
-    Any, 
-    Callable, 
-    Coroutine, 
-    Dict, 
-    Generator, 
-    List, 
-    Optional, 
-    Sequence, 
-    TYPE_CHECKING, 
-    Tuple, 
-    TypeVar, 
-    Union
-)
+from typing import Any, Callable, Coroutine, TypeVar
 
-import aiohttp
+Coro = TypeVar("Coro", bound=Callable[..., Coroutine[Any, Any, Any]])
 
-Coro = TypeVar('Coro', bound=Callable[..., Coroutine[Any, Any, Any]])
 
 class Client:
     pass

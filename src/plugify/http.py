@@ -15,44 +15,51 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the LICENSE file for the specific language governing permissions and
 limitations under the License.
 """
-import asyncio
-import aiohttp
 import json
-from typing import Any, Optional, Type, TYPE_CHECKING, TypeVar, Coroutine, Union, Dict
-from urllib.parse import quote as uriquote
 from types import TracebackType
+from typing import TYPE_CHECKING, Any, Coroutine, Dict, TypeVar, Union
+from urllib.parse import quote as uriquote
+
+import aiohttp
 
 if TYPE_CHECKING:
-    from .types.snowflake import Snowflake, SnowflakeList # Hopefully snowflakes are implemented before public release
     from types import TracebackType
 
-    
-T = TypeVar('T')
-BE = TypeVar('BE', bound=BaseException)
-MU = TypeVar('MU', bound='MaybeUnlock')
+    from .types.snowflake import (  # Hopefully snowflakes are implemented before public release
+        Snowflake,
+        SnowflakeList,
+    )
+
+
+T = TypeVar("T")
+BE = TypeVar("BE", bound=BaseException)
 Response = Coroutine[Any, Any, T]
 
-version = "2"
-
 async def json_or_text(response: aiohttp.ClientResponse) -> Union[Dict[str, Any], str]:
-    text = await response.text(encoding='utf-8')
+    text = await response.text(encoding="utf-8")
     try:
-        if response.headers['content-type'] == 'application/json':
+        if response.headers["content-type"] == "application/json":
             return json.loads(text)
     except KeyError:
         pass
 
     return text
 
+
 class Route:
-    BASE = f"https://api.plugify.cf/v{version}" # https://docs.plugify.cf/http/#http-overview
+    BASE = "https://api.plugify.cf/v2"  # https://docs.plugify.cf/http/#http-overview
 
     def __init__(self, method, route, **parameters: Any):
         self.method = method
         self.path = route.format(**parameters)
         url = self.BASE + self.path
         if parameters:
-            url = url.format_map({k: uriquote(v) if isinstance(v, str) else v for k, v in parameters.items()})
+            url = url.format_map(
+                {
+                    k: uriquote(v) if isinstance(v, str) else v
+                    for k, v in parameters.items()
+                }
+            )
         self.url: str = url
 
         # Used for bucket cooldowns
@@ -64,31 +71,11 @@ class Route:
         """The Route's bucket identifier."""
         return f"{self.channel_id}:{self.group_id}:{self.path}"
 
-# Based Of discord.py's implementation
-class MaybeUnlock:
-    def __init__(self, lock: asyncio.Lock) -> None:
-        self.lock: asyncio.Lock = lock
-        self._unlock: bool = True
-
-    def __enter__(self: MU) -> MU:
-        return self
-
-    def defer(self) -> None:
-        self._unlock = False
-
-    def __exit__(
-        self,
-        exc_type: Optional[Type[BE]],
-        exc: Optional[BE],
-        traceback: Optional[TracebackType],
-    ) -> None:
-        if self._unlock:
-            self.lock.release()
 
 class HTTPClient:
-    """HTTPClient for connecting to Plugify"""
-    pass
+    """HTTPClient for connecting to Plugify
 
-class RatelimitClient:
-    """Handles Ratelimiting To Prevent 429s"""
+    .. versionadded:: 0.1.0
+    """
+
     pass

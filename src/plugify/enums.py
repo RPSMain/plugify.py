@@ -17,28 +17,30 @@ limitations under the License.
 """
 from enum import Enum
 
+
 class APIErrors(Enum):
     """Class Defines Error Enums: https://docs.plugify.cf/http/#apierror"""
-    UNKNOWN                         = 0
-    MISSING_TOKEN                   = 1
-    INCORRECT_TOKEN                 = 2
-    INVALID_DATA                    = 3
-    INVALID_CAPTCHA_RESPONSE        = 4
-    INVALID_EMAIL                   = 5
-    EMAIL_USED                      = 6
-    USERNAME_CLAIMED                = 7
-    NO_SUCH_USER                    = 8
-    NO_SUCH_GROUP                   = 9
-    INCORRECT_PASSWORD              = 10
-    NOT_VERIFIED                    = 11
-    INVALID_VERIFICATION_TOKEN      = 12
-    NO_SUCH_INVITE                  = 13
-    NOT_ENOUGH_PERMS                = 14
-    NO_INVITE_CODE                  = 15
-    INVALID_USERNAME                = 16
-    ALREADY_IN_GROUP                = 17
-    NO_SUCH_APP                     = 18
-    INVALID_SECRET                  = 19
-    NO_SUCH_CHANNEL                 = 20
-    NO_SUCH_MEMBER                  = 21
-    USER_NOT_BANNED                 = 22
+
+    UNKNOWN = 0
+    MISSING_TOKEN = 1
+    INCORRECT_TOKEN = 2
+    INVALID_DATA = 3
+    INVALID_CAPTCHA_RESPONSE = 4
+    INVALID_EMAIL = 5
+    EMAIL_USED = 6
+    USERNAME_CLAIMED = 7
+    NO_SUCH_USER = 8
+    NO_SUCH_GROUP = 9
+    INCORRECT_PASSWORD = 10
+    NOT_VERIFIED = 11
+    INVALID_VERIFICATION_TOKEN = 12
+    NO_SUCH_INVITE = 13
+    NOT_ENOUGH_PERMS = 14
+    NO_INVITE_CODE = 15
+    INVALID_USERNAME = 16
+    ALREADY_IN_GROUP = 17
+    NO_SUCH_APP = 18
+    INVALID_SECRET = 19
+    NO_SUCH_CHANNEL = 20
+    NO_SUCH_MEMBER = 21
+    USER_NOT_BANNED = 22
