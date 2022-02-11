@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2021-present VincentRPS
@@ -19,3 +20,47 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+
+from typing import Union
+
+
+class Invite:
+    """Represents a Plugify Invite
+    
+    .. versionadded:: 1.0.0
+
+    Parameters
+    ----------
+    data: :class:`dict`
+        The raw invite data
+    """
+    def __init__(self, data: dict):
+        self.from_dict = data
+    
+    @property
+    def id(self) -> str:
+        return self.from_dict['id']
+    
+    @property
+    def uses(self) -> Union[int, None]:
+        return self.from_dict['uses']
+    
+    @property
+    def times_used(self) -> int:
+        return self.from_dict['timesUsed']
+
+    @property
+    def expires(self) -> str:
+        return self.from_dict['expires']
+    
+    @property
+    def created_at(self) -> str:
+        return self.from_dict['createdAt']
+    
+    @property
+    def group_id(self) -> str:
+        return self.from_dict['groupId']
+    
+    def owner(self) -> str:
+        return self.from_dict['owner']

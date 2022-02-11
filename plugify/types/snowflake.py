@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2021-present VincentRPS
@@ -19,3 +20,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+# this could just be a int type, 
+# since python is powerful enough to parse an integer that long 
+# while javascript isn't.
+from typing import List, Union
+
+Snowflake = Union[str, int]
+SnowflakeList = List[Snowflake]

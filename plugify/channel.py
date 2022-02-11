@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2021-present VincentRPS
@@ -19,3 +20,32 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+
+class TextChannel:
+    """Represents a Plugify Text Channel
+    
+    .. versionadded:: 1.0.0
+
+    Parameters
+    ----------
+    data: :class:`dict`
+        The raw text channel
+    """
+    def __init__(self, data: dict):
+        self.from_dict = data
+    
+    @property
+    def id(self) -> str:
+        return self.from_dict['id']
+    
+    @property
+    def name(self) -> str:
+        return self.from_dict['name']
+    
+    @property
+    def description(self) -> str:
+        return self.from_dict['description']
+    
+    def group_id(self) -> str:
+        return self.from_dict['group_id']

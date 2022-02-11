@@ -3,15 +3,15 @@ plugify.py
 ~~~~~~~~~~
 Pythonic API Wrapper For https://plugify.cf
 
-:copyright: 2021 RPS
-:license: Apache-2.0
+:copyright: 2021-present VincentRPS
+:license: MIT
 """
 
 __title__ = "plugify"
-__author__ = "RPS"
-__license__ = "Apache-2.0"
+__author__ = "VincentRPS"
+__license__ = "MIT"
 __copyright__ = "Copyright 2021 RPS"
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 
 __path__ = __import__("pkgutil").extend_path(__path__, __name__)
 
@@ -21,9 +21,8 @@ from typing import Literal, NamedTuple
 from .client import *
 from .dispatch import *
 from .enums import *
-from .gateway import *
+from .api import *
 from .group import *
-from .http import *
 from .user import *
 
 

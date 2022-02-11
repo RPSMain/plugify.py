@@ -17,9 +17,9 @@ limitations under the License.
 """
 import re
 
-from setuptools import find_packages, setup
+from setuptools import setup
 
-with open("src/plugify/__init__.py") as f:
+with open("plugify/__init__.py") as f:
     version = re.search(
         r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE
     ).group(1)
@@ -27,6 +27,12 @@ with open("src/plugify/__init__.py") as f:
 requirements = []
 with open("requirements.txt") as f:
     requirements = f.read().splitlines()
+
+packages = [
+    'plugify',
+    'plugify.types',
+    'plugify.api'
+]
 
 extra_requires = {
     "speed": [
@@ -40,15 +46,14 @@ extra_requires = {
 setup(
     name="plugify.py",
     version=version,
-    packages=find_packages(where="src"),
-    package_dir={"": "src"},
+    packages=packages,
     project_utls={
         "Documentation": "https://plugify.rtfd.io",
-        "Issue Tracker": "https://github.com/RPSMain/plugify.py/issues",
-        "Pull Request Tracker": "https://github.com/RPSMain/plugify.py/pulls",
+        "Issue Tracker": "https://github.com/VincentRPS/plugify.py/issues",
+        "Pull Request Tracker": "https://github.com/VincentRPS/plugify.py/pulls",
     },
-    url="https://github.com/RPSMain/plugify.py",
-    license="Apache-2.0",
+    url="https://github.com/VincentRPS/plugify.py",
+    license="MIT",
     author="RPS",
     long_description=open("README.rst").read(),
     long_description_content_type="text/x-rst",
@@ -57,8 +62,8 @@ setup(
     description="Pythonic API Wrapper For Plugify",
     python_requires=">=3.8",
     classifiers=[
-        "Development Status :: 1 - Planning",
-        "License :: OSI Approved :: Apache Software License",
+        "Development Status :: 2 - Pre-Alpha",
+        "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",
         "Natural Language :: English",
         "Operating System :: OS Independent",

@@ -1,3 +1,4 @@
+"""
 MIT License
 
 Copyright (c) 2021-present VincentRPS
@@ -19,3 +20,33 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+
+class Group:
+    """Represents a Plugify Group
+    
+    .. versionadded:: 1.0.0
+
+
+    Parameters
+    ----------
+    data: :class:`dict`
+        The raw group data
+    """
+    def __init__(self, data: dict):
+        self.from_dict = data
+    
+    @property
+    def name(self) -> str:
+        return self.from_dict['name']
+    
+    @property
+    def avatar_url(self) -> str:
+        return self.from_dict['avatarUrl']
+    
+    @property
+    def id(self) -> str:
+        return self.from_dict['id']
+    
+    def owner(self) -> str:
+        return self.from_dict['owner']
